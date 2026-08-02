@@ -1,3 +1,8 @@
+import HeroSection from "../components/landing/HeroSection";
+import Navbar from "../components/landing/Navbar";
+
 export default function Home() {
-  return <h1>welcome to Home page!</h1>;
+  return <div>
+    <HeroSection />
+  </div>;
 }

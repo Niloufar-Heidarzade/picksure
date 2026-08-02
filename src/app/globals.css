@@ -1,2 +1,18 @@
 @import "tailwindcss";
 
+@theme {
+  /* Fonts */
+  --font-display: var(--font-display);
+  --font-default: var(--font-default);
+
+  /* Colors */
+  --color-background: #09090a;
+  --color-primary: #f7f0e8;
+  --color-secondary: #d8c5b0;
+  --color-paragraph: #c9c2ba;
+  --color-gold-accent: #d7a46a;
+
+  --color-button-background: #e3b37c;
+  --color-button-text: #1c1714;
+  --color-button-hover: #edc18f;
+}
