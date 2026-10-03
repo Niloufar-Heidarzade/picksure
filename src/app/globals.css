@@ -1,18 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
 @import "tailwindcss";
 
+@keyframes float {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+
+  20% {
+    transform: translate(10px, -12px) rotate(0.5deg);
+  }
+
+  40% {
+    transform: translate(-6px, -22px) rotate(-0.4deg);
+  }
+
+  60% {
+    transform: translate(-14px, -16px) rotate(-0.6deg);
+  }
+
+  80% {
+    transform: translate(6px, -8px) rotate(0.3deg);
+  }
+}
+
 @theme {
-  /* Fonts */
-  --font-display: var(--font-display);
-  --font-default: var(--font-default);
+  --font-merriweather: "Merriweather", serif;
+  --animate-float: float 7s ease-in-out infinite;
+}
 
-  /* Colors */
-  --color-background: #09090a;
-  --color-primary: #f7f0e8;
-  --color-secondary: #d8c5b0;
-  --color-paragraph: #c9c2ba;
-  --color-gold-accent: #d7a46a;
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  transform: translate(-50%, -50%) scale(0);
+  animation: ripple 0.6s ease-out;
+  pointer-events: none;
+}
 
-  --color-button-background: #e3b37c;
-  --color-button-text: #1c1714;
-  --color-button-hover: #edc18f;
+@keyframes ripple {
+  to {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+  }
 }

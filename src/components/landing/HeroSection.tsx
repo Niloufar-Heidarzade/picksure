@@ -1,78 +1,67 @@
+"use client"
+
+import { MoveRight } from "lucide-react";
 import Image from "next/image";
-import Navbar from "./Navbar";
 
 export default function HeroSection() {
   return (
-    <section className="relative w-full h-screen overflow-hidden">
-      {/* Background Image */}
-      <Image
-        src="/images/landing-hero.png"
-        alt="A warm picture of a room full of films"
-        fill
-        priority
-        className="object-cover object-right"
-      />
-
-      {/* Left & Top Gradient Overlay */}
-      <div
-        className="absolute inset-0"
-        style={{
-          background: `
-            linear-gradient(
-              to right,
-              #09090A 0px,
-              #09090A 400px,
-              rgba(9,9,10,0.7) 600px,
-              transparent 700px
-            ),
-            linear-gradient(
-              to bottom,
-              #09090A 0px,
-              rgba(9,9,10,0.7) 50px,
-              transparent 180px
-            )
-          `,
-        }}
-      />
-      {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/20" />
-
-      {/* Vignette */}
-      <div
-        className="absolute inset-0"
-        style={{
-          background:
-            "radial-gradient(circle at center, transparent 45%, rgba(0,0,0,.55) 100%)",
-        }}
-      />
-
-      {/* Warm Glow */}
-      <div className="absolute bottom-[-200px] right-[-150px] h-[700px] w-[700px] rounded-full bg-orange-300/10 blur-[200px]" />
-
-      {/* Content */}
-      <div className="relative z-10">
-        <Navbar />
-        <div className="tracking-wide ml-15 mt-15 relative">
-          <p className="text-button-background font-normal font-default">
-            Feel <span className="text-secondary font-semibold">sure</span>{" "}
-            about what you
-            <span className="text-secondary font-semibold"> pick</span> to
-            watch.
-          </p>
-          <h1 className="text-primary font-display text-[60px] w-[370px] font-bold leading-[66px] text-transparent bg-clip-text bg-gradient-to-r from-primary to-button-hover mt-5">
-            Find your next favorite movie or series.
+    <section className="bg-[#2B2D38] w-full min-h-screen relative overflow-hidden">
+      {/* logo */}
+      <div className="pl-30 pr-30 pt-10">
+        <p className="font-merriweather text-[30px]">
+          <span className="text-[#DB2A6B]">Pick</span>
+          <span className="text-white">Sure</span>
+          <span className="text-[#DB2A6B]">.</span>
+        </p>
+      </div>
+      {/* background decorative circles */}
+      <div className="w-[852] h-[852] border border-[#E1E1E1]/25 rounded-full absolute left-[750] top-[153] z-0"></div>
+      <div className="w-[550] h-[550] border border-[#E1E1E1]/25 rounded-full absolute left-[950] top-[300] z-0"></div>
+      {/* hero content and visual */}
+      <div className="flex pl-30 pr-20 items-center h-full mt-20">
+        <div className="w-[550]">
+          <h1 className="text-white text-[60px] font-merriweather font-bold leading-snug mb-5">
+            Discover your next watch here
           </h1>
-          <span className="text-gold-accent text-lg absolute top-30 left-90">
-            ✦
-          </span>
-          <p className="font-default text-paragraph w-[390px] mt-4">
-            Build your personal movie library, discover your next favorite
-            story, connect with fellow movie lovers, and receive AI-powered
-            recommendations tailored to your unique taste.
+          <p className="text-white/50 w-[400] leading-relaxed mb-7">
+            Find hidden gems you might have never come across, and explore what
+            people with similar tastes are watching. From personalized
+            recommendations to your own movies/series journal, PickSure brings
+            everything you need to enjoy the journey of watching.
           </p>
-          <button className="font-normal font-light bg-button-background text-button-text w-[200px] h-[50px] rounded-lg mt-8 shadow-[0_10px_30px_rgba(227,179,124,0.35)]">
-            Get Started <span className="ml-2">→</span>
-          </button>
+          <div className="flex gap-7">
+            <button
+              onClick={(e) => {
+                const button = e.currentTarget;
+                const rect = button.getBoundingClientRect();
+                const ripple = document.createElement("span")
+                const size = 2 * rect.width;
+                ripple.className = "ripple"
+                ripple.style.width = `${size}px`
+                ripple.style.height = `${size}px`
+                ripple.style.left = `${e.clientX - rect.left}px`
+                ripple.style.top = `${e.clientY - rect.top}px`
+                button.appendChild(ripple);
+                setTimeout(() => {
+                  ripple.remove()
+                } , 600);
+              }}
+              className="relative overflow-hidden cursor-pointer text-white bg-[#DB2A6B] w-[170] h-[45] text-[15px] rounded-lg rounded-bl-none font-light hover:shadow-[0_0_10px_#DB2A6B] hover:scale-[1.03] transition-all duration-200 ease-out"
+            >
+              <span className="relative z-10">Get Started</span>
+            </button>
+            <button className="cursor-pointer h-[45] text-white underline flex items-center justify-center gap-3 font-semibold">
+              <span>Learn More</span> <MoveRight />
+            </button>
+          </div>
+        </div>
+        <div className="relative z-10 animate-float">
+          <Image
+            src="/images/welcome-hero.png"
+            alt="Movie watching illustration"
+            width={800}
+            height={600}
+          />
         </div>
       </div>
     </section>
