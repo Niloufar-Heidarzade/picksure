@@ -1,7 +1,8 @@
-"use client"
+"use client";
 
 import { MoveRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function HeroSection() {
   return (
@@ -30,26 +31,27 @@ export default function HeroSection() {
             everything you need to enjoy the journey of watching.
           </p>
           <div className="flex gap-7">
-            <button
+            <Link
+              href="/signup"
               onClick={(e) => {
                 const button = e.currentTarget;
                 const rect = button.getBoundingClientRect();
-                const ripple = document.createElement("span")
+                const ripple = document.createElement("span");
                 const size = 2 * rect.width;
-                ripple.className = "ripple"
-                ripple.style.width = `${size}px`
-                ripple.style.height = `${size}px`
-                ripple.style.left = `${e.clientX - rect.left}px`
-                ripple.style.top = `${e.clientY - rect.top}px`
+                ripple.className = "ripple";
+                ripple.style.width = `${size}px`;
+                ripple.style.height = `${size}px`;
+                ripple.style.left = `${e.clientX - rect.left}px`;
+                ripple.style.top = `${e.clientY - rect.top}px`;
                 button.appendChild(ripple);
                 setTimeout(() => {
-                  ripple.remove()
-                } , 600);
+                  ripple.remove();
+                }, 600);
               }}
-              className="relative overflow-hidden cursor-pointer text-white bg-[#DB2A6B] w-[170] h-[45] text-[15px] rounded-lg rounded-bl-none font-light hover:shadow-[0_0_10px_#DB2A6B] hover:scale-[1.03] transition-all duration-200 ease-out"
+              className="flex items-center justify-center relative overflow-hidden cursor-pointer text-white bg-[#DB2A6B] w-[170] h-[45] text-[15px] rounded-lg rounded-bl-none font-light hover:shadow-[0_0_10px_#DB2A6B] hover:scale-[1.03] transition-all duration-200 ease-out"
             >
               <span className="relative z-10">Get Started</span>
-            </button>
+            </Link>
             <button className="cursor-pointer h-[45] text-white underline flex items-center justify-center gap-3 font-semibold">
               <span>Learn More</span> <MoveRight />
             </button>
@@ -57,7 +59,7 @@ export default function HeroSection() {
         </div>
         <div className="relative z-10 animate-float">
           <Image
-            src="/images/welcome-hero.png"
+            src="/images/car-characters.png"
             alt="Movie watching illustration"
             width={800}
             height={600}
