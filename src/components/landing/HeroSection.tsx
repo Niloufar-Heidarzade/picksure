@@ -21,7 +21,7 @@ export default function HeroSection() {
       {/* hero content and visual */}
       <div className="flex pl-30 pr-20 items-center h-full mt-20">
         <div className="w-[550]">
-          <h1 className="text-white text-[60px] font-merriweather font-bold leading-snug mb-5">
+          <h1 className="text-white text-[60px] font-heading font-bold leading-snug mb-5">
             Discover your next watch here
           </h1>
           <p className="text-white/50 w-[400] leading-relaxed mb-7">

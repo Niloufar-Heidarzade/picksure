@@ -1,15 +1,15 @@
 import "./globals.css";
-import { Cormorant_Garamond, Manrope } from "next/font/google";
+import { Nunito, DM_Sans } from "next/font/google";
 
-const cormorant = Cormorant_Garamond({
+const nunito = Nunito({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-display",
+  weight: ["400", "500", "600", "700" , "800"],
+  variable: "--font-nunito",
 });
-const manrope = Manrope({
+const dmSans = DM_Sans({
   subsets: ["latin"],
   weight: ["200", "300", "400", "500", "600", "700"],
-  variable: "--font-default",
+  variable: "--font-dm-sans",
 });
 
 export default function RootLayout({
@@ -19,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${cormorant.variable} ${manrope.variable}`}>
+      <body className={`${nunito.variable} ${dmSans.variable}`}>
         {children}
       </body>
     </html>

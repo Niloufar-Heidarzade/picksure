@@ -2,7 +2,7 @@
 
 export default function SignUp() {
   return (
-    <section className="w-full min-h-screen bg-[#2B2D38] flex justify-between items-center">
+    <section className="w-full min-h-screen bg-persimmon flex justify-between items-center">
       {/* clipping shape */}
       <svg className="h-0 w-0" aria-hidden="true">
         <defs>
@@ -12,7 +12,7 @@ export default function SignUp() {
         </defs>
       </svg>
       {/* visual section */}
-      <div className="w-3/5 min-h-screen bg-red-500 bg-cover bg-center" style={{clipPath : "url(#waveClip)" , backgroundImage : "url(/images/signup-illustration.png"}}>
+      <div className="w-3/5 min-h-screen bg-persimmon bg-cover bg-left" style={{clipPath : "url(#waveClip)" , backgroundImage : "url(/images/auth-illustration.png)"}}>
       </div>
       {/* signup form section */}
       <div className="w-2/5 min-h-screen"></div>
