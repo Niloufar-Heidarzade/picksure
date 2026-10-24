@@ -62,3 +62,15 @@
     opacity: 0;
   }
 }
+
+@utility heading-gradient {
+  background-image: linear-gradient(
+    to right,
+    var(--color-text-primary) 0%,
+    var(--color-text-primary) 35%,
+    var(--color-sky) 40%,
+    var(--color-lavender) 45%,
+    var(--color-rose) 50%,
+    var(--color-persimmon) 100%
+  );
+}
